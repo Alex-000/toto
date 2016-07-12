@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="sample">
+
+<!-- 		<mapping class = "fr.treeptik.annuaire.pojo.*" /> -->
+<!-- 		<class>fr.treeptik.annuaire.pojo.Personne</class> -->
+<!-- 		<class>fr.treeptik.annuaire.pojo.Numero</class> -->
+<!-- 		marche mais pas top car ça ne marchera qu'en dev -->
+<!-- 		<jar-file>file:./target/classes</jar-file> -->
+<!-- 		<exclude-unlisted-classes>false</exclude-unlisted-classes> -->
+		<jar-file>${project.build.outputDirectory}</jar-file>
+		<properties>
+
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/annuairejpqltest" />
+			<property name="javax.persistence.jdbc.user" value="root" />
+			<property name="javax.persistence.jdbc.password" value="" />
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+<!-- 			<property name="hibernate.archive.autodetection" value="class, hbm" /> -->
+			<property name="hibernate.hbm2ddl.auto" value="create" />
+
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.generate_statistics" value="true" />
+
+		</properties>
+		
+<!-- 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> -->
+<!-- 		<shared-cache-mode>ALL</shared-cache-mode> -->
+<!-- 		<validation-mode>AUTO</validation-mode> -->
+<!-- 		<properties> -->
+<!-- 			<property name="javax.persistence.jdbc.url" value="jdbc:hsqldb:mem:testdb" /> -->
+<!-- 			<property name="javax.persistence.jdbc.user" value="sa" /> -->
+<!-- 			<property name="javax.persistence.jdbc.password" value="" /> -->
+<!-- 			<property name="javax.persistence.jdbc.driver" value="org.hsqldb.jdbcDriver" /> -->
+			
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect" /> -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="create" /> -->
+			
+<!-- 			<property name="hibernate.show_sql" value="true" /> -->
+<!-- 			<property name="hibernate.format_sql" value="true" /> -->
+<!-- 			<property name="hibernate.generate_statistics" value="true" /> -->
+<!-- 		</properties> -->
+	</persistence-unit>
+
+</persistence>
